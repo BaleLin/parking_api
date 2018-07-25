@@ -2,6 +2,7 @@ package com.oocl.employeeapi.domain;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -10,7 +11,7 @@ public class ParkingLots {
     private int lotId;
     private String parkingLotName;
     int size;
-    private List<Car> carList;
+    private List<Car> carList = new ArrayList<>();
 
     public ParkingLots() {
     }

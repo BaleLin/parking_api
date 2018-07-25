@@ -1,5 +1,6 @@
 package com.oocl.employeeapi.control;
 
+import com.oocl.employeeapi.domain.Car;
 import com.oocl.employeeapi.domain.ParkingLots;
 import com.oocl.employeeapi.service.ParkingLotService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,9 @@ public class ParkingLotController {
     @PostMapping("/parkingLots")
     public ParkingLots addParkingLot(@RequestBody ParkingLots parkingLots){
         return parkingLotService.addParkingLot(parkingLots);
+    }
+    @PostMapping("/parkingLots/car")
+    public ParkingLots parkCar(@RequestBody Car car){
+        return parkingLotService.parkCar(car);
     }
 }

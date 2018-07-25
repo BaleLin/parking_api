@@ -1,10 +1,12 @@
 package com.oocl.employeeapi.service;
 
+import com.oocl.employeeapi.domain.Car;
 import com.oocl.employeeapi.domain.ParkingLots;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ParkingLotService {
@@ -24,5 +26,26 @@ public class ParkingLotService {
             e.printStackTrace();
         }
         return null;
+    }
+    public ParkingLots parkCar(Car car){
+        try{
+            if (!parkingLotIsFull()){
+                for (ParkingLots parkingLots:parkingLotsList){
+                    if (parkingLots.getSize()>0){
+                        parkingLots.getCarList().add(car);
+                        return parkingLots;
+                    }
+                }
+            }
+        }catch (RuntimeException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public Boolean parkingLotIsFull(){
+        List<ParkingLots> collect = parkingLotsList.stream()
+                .filter(x -> x.getSize()>0)
+                .collect(Collectors.toList());
+        return !(collect.size() > 0);
     }
 }
