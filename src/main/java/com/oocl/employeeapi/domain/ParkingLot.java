@@ -2,6 +2,8 @@ package com.oocl.employeeapi.domain;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
 public class ParkingLot {
     private int lotId;
@@ -29,5 +31,19 @@ public class ParkingLot {
 
     public void setParkingLotName(String parkingLotName) {
         this.parkingLotName = parkingLotName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ParkingLot that = (ParkingLot) o;
+        return lotId == that.lotId;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(lotId);
     }
 }
