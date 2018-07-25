@@ -2,6 +2,7 @@ package com.oocl.employeeapi.domain;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -9,6 +10,7 @@ public class ParkingLots {
     private int lotId;
     private String parkingLotName;
     int size;
+    private List<Car> carList;
 
     public ParkingLots() {
     }
@@ -23,6 +25,13 @@ public class ParkingLots {
         this.lotId = lotId;
         this.size = size;
         this.parkingLotName = parkingLotName;
+    }
+
+    public ParkingLots(int lotId, String parkingLotName, int size, List<Car> carList) {
+        this.lotId = lotId;
+        this.parkingLotName = parkingLotName;
+        this.size = size;
+        this.carList = carList;
     }
 
     public int getLotId() {
@@ -47,6 +56,14 @@ public class ParkingLots {
 
     public void setSize(int size) {
         this.size = size;
+    }
+
+    public List<Car> getCarList() {
+        return carList;
+    }
+
+    public void setCarList(List<Car> carList) {
+        this.carList = carList;
     }
 
     @Override
