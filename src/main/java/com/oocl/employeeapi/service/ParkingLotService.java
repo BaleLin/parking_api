@@ -10,8 +10,8 @@ import java.util.List;
 public class ParkingLotService {
     List<ParkingLots> parkingLotsList = new ArrayList<>();
     {
-        parkingLotsList.add(new ParkingLots(1,"东南停车场"));
-        parkingLotsList.add(new ParkingLots(2,"东北停车场"));
+        parkingLotsList.add(new ParkingLots(1,"东南停车场",20));
+        parkingLotsList.add(new ParkingLots(2,"东北停车场",20));
     }
     public List<ParkingLots> getAllParkingLot(){
         return parkingLotsList;

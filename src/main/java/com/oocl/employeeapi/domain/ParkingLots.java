@@ -8,12 +8,20 @@ import java.util.Objects;
 public class ParkingLots {
     private int lotId;
     private String parkingLotName;
+    int size;
 
     public ParkingLots() {
     }
 
-    public ParkingLots(int lotId, String parkingLotName) {
+//    public ParkingLots(int lotId, String parkingLotName) {
+//        this.lotId = lotId;
+//        this.parkingLotName = parkingLotName;
+//    }
+
+
+    public ParkingLots(int lotId,  String parkingLotName,int size) {
         this.lotId = lotId;
+        this.size = size;
         this.parkingLotName = parkingLotName;
     }
 
@@ -31,6 +39,14 @@ public class ParkingLots {
 
     public void setParkingLotName(String parkingLotName) {
         this.parkingLotName = parkingLotName;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
     }
 
     @Override

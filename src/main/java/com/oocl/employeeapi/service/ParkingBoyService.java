@@ -13,8 +13,8 @@ public class ParkingBoyService {
 
     {
         List<ParkingLots> list1 = new ArrayList<>();
-        list1.add(new ParkingLots(1, "东南停车场"));
-        list1.add(new ParkingLots(2, "东南停车场"));
+        list1.add(new ParkingLots(1, "东南停车场",20));
+        list1.add(new ParkingLots(2, "东南停车场",20));
         parkingBoysList.add(new ParkingBoys(1, list1));
     }
 
