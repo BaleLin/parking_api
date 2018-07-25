@@ -20,9 +20,9 @@ public class ReceiptsController {
     public Car getCarByReceipt(@PathVariable String receiptsId){
         return receiptsService.getCarByReceipt(receiptsId);
     }
-    @PostMapping("/receipts")
-    public Receipts addReceipts(@RequestBody Car car){
-        return receiptsService.addReceipts(car);
+    @PostMapping("/receipts/{receiptsId}")
+    public Receipts addReceipts(@PathVariable String receiptsId, @RequestBody Car car){
+        return receiptsService.addReceipts(receiptsId,car);
     }
 
     @PutMapping("/receipts/{receiptsId}")

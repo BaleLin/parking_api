@@ -12,17 +12,15 @@ public class ReceiptsService {
     List<Receipts> receiptsList = new ArrayList<>();
     Map<String,Car> receiptCarHashMap = new HashMap<>();
     {
-        String receiptId = UUID.randomUUID().toString();
-        Receipts receipts = new Receipts(receiptId,true);
+        Receipts receipts = new Receipts("1",true);
         Car car = new Car("粤C8888");
         receiptsList.add(receipts);
-        receiptCarHashMap.put(receiptId,car);
+        receiptCarHashMap.put("1",car);
     }
     public Map<String,Car> getAllReceipt(){
         return receiptCarHashMap;
     }
-    public Receipts addReceipts(Car car){
-        String receiptId = UUID.randomUUID().toString();
+    public Receipts addReceipts(String receiptId,Car car){
         Receipts receipts = new Receipts(receiptId,true);
         receiptCarHashMap.put(receiptId,car);
         return receipts;
