@@ -20,7 +20,7 @@ public class ParkingBoyController {
     public ParkingBoy addParkingBoy(@RequestBody ParkingBoy parkingBoy){
         return parkingBoyService.addParkingBoy(parkingBoy);
     }
-    @PostMapping("/parkingBoy/{bId}")
+    @PostMapping("/parkingBoy/{bId}/parkingLot")
     public ParkingBoy addParkingLotToBoy(@PathVariable int bId,@RequestBody ParkingLot parkingLot){
         return parkingBoyService.addParkingLotToBoy(bId,parkingLot);
     }
