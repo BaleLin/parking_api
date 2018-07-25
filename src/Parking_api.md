@@ -1,28 +1,28 @@
-### ParkingLot:
+### ParkingLots:
 1.
 method:get  
-path:/parkingLot  
+path:/parkingLots  
 request:  
-respose:List<ParkingLot>  
+respose:List<ParkingLots>  
 2.  
 method:post  
-path:/parkingLot  
-request:parkingLot  
-respose:parkingLot  
+path:/parkingLots  
+request:parkingLots  
+respose:parkingLots  
 
-### ParkingBoy：  
+### ParkingBoys：  
 1.
 method:get  
-path:/parkingBoy  
+path:/parkingBoys  
 request:  
-respose:List<ParkingBoy>  
+respose:List<ParkingBoys>  
 2.
 method:post  
-path:/parkingBoy  
-request:ParkingBoy  
-respose:ParkingBoy  
+path:/parkingBoys 
+request:ParkingBoys 
+respose:ParkingBoys  
 3.
 method:post  
-path:parkingBoy/{bId}/parkingLot  
-request:ParkingLot  
-respose:ParkingBoy  
+path:parkingBoys/{bId}/parkingLots  
+request:ParkingLots  
+respose:ParkingBoys  

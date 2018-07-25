@@ -5,14 +5,14 @@ import org.springframework.stereotype.Service;
 import java.util.Objects;
 
 @Service
-public class ParkingLot {
+public class ParkingLots {
     private int lotId;
     private String parkingLotName;
 
-    public ParkingLot() {
+    public ParkingLots() {
     }
 
-    public ParkingLot(int lotId, String parkingLotName) {
+    public ParkingLots(int lotId, String parkingLotName) {
         this.lotId = lotId;
         this.parkingLotName = parkingLotName;
     }
@@ -37,7 +37,7 @@ public class ParkingLot {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ParkingLot that = (ParkingLot) o;
+        ParkingLots that = (ParkingLots) o;
         return lotId == that.lotId;
     }
 

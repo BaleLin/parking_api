@@ -1,7 +1,7 @@
 package com.oocl.employeeapi.control;
 
-import com.oocl.employeeapi.domain.ParkingBoy;
-import com.oocl.employeeapi.domain.ParkingLot;
+import com.oocl.employeeapi.domain.ParkingBoys;
+import com.oocl.employeeapi.domain.ParkingLots;
 import com.oocl.employeeapi.service.ParkingBoyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,16 +12,16 @@ public class ParkingBoyController {
     @Autowired
     private ParkingBoyService parkingBoyService;
 
-    @GetMapping("/parkingBoy")
-    public List<ParkingBoy> getAllParkingBoy(){
+    @GetMapping("/parkingBoys")
+    public List<ParkingBoys> getAllParkingBoy(){
         return parkingBoyService.getAllParkingBoy();
     }
-    @PostMapping("/parkingBoy")
-    public ParkingBoy addParkingBoy(@RequestBody ParkingBoy parkingBoy){
-        return parkingBoyService.addParkingBoy(parkingBoy);
+    @PostMapping("/parkingBoys")
+    public ParkingBoys addParkingBoy(@RequestBody ParkingBoys parkingBoys){
+        return parkingBoyService.addParkingBoy(parkingBoys);
     }
-    @PostMapping("/parkingBoy/{bId}/parkingLot")
-    public ParkingBoy addParkingLotToBoy(@PathVariable int bId,@RequestBody ParkingLot parkingLot){
-        return parkingBoyService.addParkingLotToBoy(bId,parkingLot);
+    @PostMapping("/parkingBoys/{bId}/parkingLots")
+    public ParkingBoys addParkingLotToBoy(@PathVariable int bId, @RequestBody ParkingLots parkingLots){
+        return parkingBoyService.addParkingLotToBoy(bId, parkingLots);
     }
 }

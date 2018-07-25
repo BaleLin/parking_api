@@ -1,6 +1,6 @@
 package com.oocl.employeeapi.service;
 
-import com.oocl.employeeapi.domain.ParkingLot;
+import com.oocl.employeeapi.domain.ParkingLots;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -8,18 +8,18 @@ import java.util.List;
 
 @Service
 public class ParkingLotService {
-    List<ParkingLot> parkingLotList = new ArrayList<>();
+    List<ParkingLots> parkingLotsList = new ArrayList<>();
     {
-        parkingLotList.add(new ParkingLot(1,"东南停车场"));
-        parkingLotList.add(new ParkingLot(2,"东北停车场"));
+        parkingLotsList.add(new ParkingLots(1,"东南停车场"));
+        parkingLotsList.add(new ParkingLots(2,"东北停车场"));
     }
-    public List<ParkingLot> getAllParkingLot(){
-        return parkingLotList;
+    public List<ParkingLots> getAllParkingLot(){
+        return parkingLotsList;
     }
-    public ParkingLot addParkingLot(ParkingLot parkingLot){
+    public ParkingLots addParkingLot(ParkingLots parkingLots){
         try{
-            parkingLotList.add(parkingLot);
-            return parkingLot;
+            parkingLotsList.add(parkingLots);
+            return parkingLots;
           }catch (RuntimeException e){
             e.printStackTrace();
         }

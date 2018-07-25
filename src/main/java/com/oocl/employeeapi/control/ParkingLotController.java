@@ -1,6 +1,6 @@
 package com.oocl.employeeapi.control;
 
-import com.oocl.employeeapi.domain.ParkingLot;
+import com.oocl.employeeapi.domain.ParkingLots;
 import com.oocl.employeeapi.service.ParkingLotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,12 +15,12 @@ public class ParkingLotController {
     @Autowired
     private ParkingLotService parkingLotService;
 
-    @GetMapping("/parkingLot")
-    public List<ParkingLot> getAllParkingLot(){
+    @GetMapping("/parkingLots")
+    public List<ParkingLots> getAllParkingLot(){
         return parkingLotService.getAllParkingLot();
     }
-    @PostMapping("/parkingLot")
-    public ParkingLot addParkingLot(@RequestBody ParkingLot parkingLot){
-        return parkingLotService.addParkingLot(parkingLot);
+    @PostMapping("/parkingLots")
+    public ParkingLots addParkingLot(@RequestBody ParkingLots parkingLots){
+        return parkingLotService.addParkingLot(parkingLots);
     }
 }
