@@ -5,25 +5,38 @@ import com.oocl.employeeapi.domain.Receipts;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class ReceiptsService {
-    Map<Receipts,Car> receiptCarHashMap = new HashMap<>();
+    List<Receipts> receiptsList = new ArrayList<>();
+    Map<String,Car> receiptCarHashMap = new HashMap<>();
     {
-        Receipts receipts = new Receipts(UUID.randomUUID().toString(),true);
+        String receiptId = UUID.randomUUID().toString();
+        Receipts receipts = new Receipts(receiptId,true);
         Car car = new Car("粤C8888");
-        receiptCarHashMap.put(receipts,car);
+        receiptsList.add(receipts);
+        receiptCarHashMap.put(receiptId,car);
     }
-    public Map<Receipts,Car> getAllReceipt(){
+    public Map<String,Car> getAllReceipt(){
         return receiptCarHashMap;
     }
     public Receipts addReceipts(Car car){
-        Receipts receipts = new Receipts(UUID.randomUUID().toString(),true);
-        receiptCarHashMap.put(receipts,car);
+        String receiptId = UUID.randomUUID().toString();
+        Receipts receipts = new Receipts(receiptId,true);
+        receiptCarHashMap.put(receiptId,car);
         return receipts;
+    }
+    public Receipts updateReceiptsUnValidById(String receiptsId){
+        if (receiptCarHashMap.keySet().contains(receiptsId)){
+           for (Receipts receipts:receiptsList){
+               if (receipts.getReceiptId().equals(receiptsId)){
+                   receipts.setValid(false);
+                   return receipts;
+               }
+           }
+           }
+           return null;
     }
 
 }
