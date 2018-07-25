@@ -16,6 +16,10 @@ public class ReceiptsController {
     public Map<String,Car> getAllReceipt(){
         return receiptsService.getAllReceipt();
     }
+    @GetMapping("/receipts/{receiptsId}")
+    public Car getCarByReceipt(@PathVariable String receiptsId){
+        return receiptsService.getCarByReceipt(receiptsId);
+    }
     @PostMapping("/receipts")
     public Receipts addReceipts(@RequestBody Car car){
         return receiptsService.addReceipts(car);
@@ -25,4 +29,6 @@ public class ReceiptsController {
     public Receipts updateReceiptsUnValidById(@PathVariable String receiptsId){
         return receiptsService.updateReceiptsUnValidById(receiptsId);
     }
+
+
 }

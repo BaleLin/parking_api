@@ -27,6 +27,12 @@ public class ReceiptsService {
         receiptCarHashMap.put(receiptId,car);
         return receipts;
     }
+    public Car getCarByReceipt(String receiptsId){
+        if (receiptCarHashMap.keySet().contains(receiptsId)){
+            return receiptCarHashMap.get(receiptsId);
+        }
+        return null;
+    }
     public Receipts updateReceiptsUnValidById(String receiptsId){
         if (receiptCarHashMap.keySet().contains(receiptsId)){
            for (Receipts receipts:receiptsList){
@@ -38,5 +44,6 @@ public class ReceiptsService {
            }
            return null;
     }
+
 
 }
