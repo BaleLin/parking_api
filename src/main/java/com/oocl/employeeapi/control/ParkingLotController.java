@@ -4,10 +4,7 @@ import com.oocl.employeeapi.domain.Car;
 import com.oocl.employeeapi.domain.ParkingLots;
 import com.oocl.employeeapi.service.ParkingLotService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +24,9 @@ public class ParkingLotController {
     @PostMapping("/parkingLots/car")
     public ParkingLots parkCar(@RequestBody Car car){
         return parkingLotService.parkCar(car);
+    }
+    @DeleteMapping("/parkingLots/car")
+    public ParkingLots unParkCar(@RequestBody Car car){
+        return parkingLotService.unparkCar(car);
     }
 }

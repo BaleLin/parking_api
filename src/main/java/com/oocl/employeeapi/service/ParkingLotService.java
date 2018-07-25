@@ -33,10 +33,28 @@ public class ParkingLotService {
                 for (ParkingLots parkingLots:parkingLotsList){
                     if (parkingLots.getSize()>0){
                         parkingLots.getCarList().add(car);
+                        int tempSize = parkingLots.getSize();
+                        parkingLots.setSize(--tempSize);
                         return parkingLots;
                     }
                 }
             }
+        }catch (RuntimeException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public ParkingLots unparkCar(Car car){
+        try{
+            for (ParkingLots parkingLots:parkingLotsList){
+                    if (parkingLots.getCarList().contains(car)){
+                        parkingLots.getCarList().remove(car);
+                        int tempSize = parkingLots.getSize();
+                        parkingLots.setSize(++tempSize);
+                        return parkingLots;
+                    }
+                }
+
         }catch (RuntimeException e){
             e.printStackTrace();
         }
