@@ -19,4 +19,13 @@ public class ParkingBoyService {
     public List<ParkingBoy> getAllParkingBoy(){
         return parkingBoyList;
     }
+    public ParkingBoy addParkingBoy(ParkingBoy parkingBoy){
+        try{
+            parkingBoyList.add(parkingBoy);
+            return parkingBoy;
+        }catch (RuntimeException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
